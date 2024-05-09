@@ -16,7 +16,7 @@ pub enum ContentBlock {
         indent_level: Option<u16>,
 
         /// ?
-        formatting: Option<serde_json::Value>,
+        formatting: Option<Box<[Formatting]>>,
     },
     #[serde(rename = "image")]
     Image {
@@ -63,7 +63,107 @@ pub enum ContentBlock {
 
         /// Whether this video can be played on a cellular connection.
         can_autoplay_on_cellular: Option<bool>,
+
+        /// ?
+        filmstrip: Option<Media>,
     },
+}
+
+/// A formatting object
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
+#[serde(tag = "type")]
+pub enum Formatting {
+    /// Bold text
+    #[serde(rename = "bold")]
+    Bold {
+        /// The start of the range
+        start: u64,
+
+        /// The end of the range
+        end: u64,
+    },
+
+    /// Italic text
+    #[serde(rename = "italic")]
+    Italic {
+        /// The start of the range
+        start: u64,
+
+        /// The end of the range
+        end: u64,
+    },
+
+    /// Strikethrough text
+    #[serde(rename = "strikethrough")]
+    Strikethrough {
+        /// The start of the range
+        start: u64,
+
+        /// The end of the range
+        end: u64,
+    },
+
+    /// A link
+    #[serde(rename = "link")]
+    Link {
+        /// The start of the range
+        start: u64,
+
+        /// The end of the range
+        end: u64,
+
+        /// The url
+        url: Option<Box<str>>,
+    },
+
+    /// A mention
+    #[serde(rename = "mention")]
+    Mention {
+        /// The start of the range
+        start: u64,
+
+        /// The end of the range
+        end: u64,
+
+        /// The blog info
+        blog: BlogInfo,
+    },
+
+    /// Color
+    #[serde(rename = "color")]
+    Color {
+        /// The start of the range
+        start: u64,
+
+        /// The end of the range
+        end: u64,
+
+        /// The hex color to use
+        hex: Box<str>,
+    },
+
+    /// Small
+    #[serde(rename = "small")]
+    Small {
+        /// The start of the range
+        start: u64,
+
+        /// The end of the range
+        end: u64,
+    },
+}
+
+/// Blog info
+#[derive(Debug, serde::Deserialize, serde::Serialize)]
+pub struct BlogInfo {
+    /// ?
+    pub uuid: Box<str>,
+
+    /// The name of the blog?
+    pub name: Box<str>,
+
+    /// The URL
+    pub url: Box<str>,
 }
 
 /// Media object
