@@ -11,7 +11,7 @@ reqwest = { version = "0.12.4", features = [ "http2", "json", "cookies" ], defau
 scraper = { version = "0.19.0", default-features = false }
 serde = { version = "1.0.201", features = ["derive"] }
 serde_json = "1.0.117"
-thiserror = "1.0.60"
+thiserror = "1.0.61"
 time = { version = "0.3.36", features = [ "serde" ] }
 tokio = "1.37.0"
 
