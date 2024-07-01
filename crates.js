@@ -1,0 +1,1 @@
+window.ALL_CRATES = ["tumblr","tumblr_cli"];
