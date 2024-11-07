@@ -1,0 +1,9 @@
+(function() {
+    var implementors = Object.fromEntries([["tumblr",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.82.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"enum\" href=\"tumblr/enum.ContentBlock.html\" title=\"enum tumblr::ContentBlock\">ContentBlock</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.82.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"enum\" href=\"tumblr/enum.Error.html\" title=\"enum tumblr::Error\">Error</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.82.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"tumblr/struct.Client.html\" title=\"struct tumblr::Client\">Client</a>"]]],["tumblr_cli",[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.82.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"enum\" href=\"tumblr_cli/enum.Subcommand.html\" title=\"enum tumblr_cli::Subcommand\">Subcommand</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.82.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"tumblr_cli/commands/download/struct.Options.html\" title=\"struct tumblr_cli::commands::download::Options\">Options</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/1.82.0/core/fmt/trait.Debug.html\" title=\"trait core::fmt::Debug\">Debug</a> for <a class=\"struct\" href=\"tumblr_cli/struct.Options.html\" title=\"struct tumblr_cli::Options\">Options</a>"]]]]);
+    if (window.register_implementors) {
+        window.register_implementors(implementors);
+    } else {
+        window.pending_implementors = implementors;
+    }
+})()
+//{"start":57,"fragment_lengths":[738,814]}
